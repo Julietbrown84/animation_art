@@ -23,6 +23,7 @@ html.js,
 	position: relative;
 }
 
+
 .js .dragslider {
 	position: absolute;
 	top: 0;
@@ -45,6 +46,48 @@ html.js,
 	margin: 0 auto;
 	line-height: 1;
 	position: relative;
+}
+
+h1 {
+	color: white;
+}
+h7 {
+	color: black;
+	font-weight: 500;
+}
+
+h3 {
+   color: yellow;
+   font-family: 'Playfair Display', serif;
+   font-size: 2em;
+   font-weight: 500;
+
+}
+
+h4 {
+   color: red;
+   font-family: 'Playfair Display', serif;
+   font-size: 2em;
+   font-weight: 500;
+
+}
+
+
+h5 {
+   color: rgba(40,49,56,0.95);
+   font-family: 'Playfair Display', serif;
+   font-size: 1em;
+   font-weight: 200;
+
+}
+
+
+h6 {
+   color: black;
+   font-family: 'Playfair Display', serif;
+   font-size: 2em;
+   font-weight: 800;
+
 }
 
 .no-js .dragslider h2 {
@@ -172,6 +215,8 @@ button.slider-switch:hover {
 	height: 100%;
 	overflow: hidden;
 }
+
+
 /*
 .img-wrap img {
 	position: absolute;
