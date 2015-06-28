@@ -1,0 +1,20 @@
+
+.falling {
+    top:0px;
+    left:0px;
+    position:absolute;
+    z-index:200;
+    width:10px;
+    height:10px;
+    background:white;
+  }
+
+  .drops {
+    top:0px;
+    left:0px;
+    position:absolute;
+    z-index:200;
+    width:10px;
+    height:10px;
+    background:white;
+  }
