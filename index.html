@@ -10,13 +10,17 @@
 		<meta name="author" content="Codrops" />
 		<link rel="shortcut icon" href="../favicon.ico">
 		<link href='http://fonts.googleapis.com/css?family=Playfair+Display:900,400|Lato:300,400,700' rel='stylesheet' type='text/css'>
+
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+
 		<link rel="stylesheet" type="text/css" href="css/dragdealer.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<link rel="stylesheet" type="text/css" href="css/animation.css" />
+		<link rel="stylesheet" type="text/css" href="css/alive.css" />
+	    <link rel="stylesheet" type="text/css" href="css/ball-bouncing.css" />
   		<script src="js/modernizr.custom.js"></script>
   		<script src="js/animation.js"></script>
+  		<script src="js/bouncy_ball.js"></script>
 	</head>
 
 	<body>
@@ -45,11 +49,22 @@
 
 					<div class="handle">
 						<div class="slide" data-content="content-1">
-							<div class="img-wrap"><img src="image/face-drawing.jpg" alt="face-drawing.jpg" /></div>
+						
+							<div   class="img-wrap">
+
+							<img src="image/face-drawing.jpg" alt="face-drawing.jpg" />
+					
+							</div>
 							<button class="content-switch">Read more</button>
+							<div id="container">
+						   <div class="ball bouncing"></div>
+						</div>
 						</div>
 
-						<div class="slide" data-content="content-2">
+
+
+
+			                <div class="slide" data-content="content-2">
 							<div class="img-wrap"><img src="image/rabbit.jpg" alt="img2"/></div>
 							<h2><span></span></h2>
 							<button class="content-switch">Read more</button>
@@ -75,7 +90,8 @@
 						</div>
 
 						<div class="slide" data-content="content-6">
-							<div class="img-wrap"><img src="image/one-wood-panel.jpg" alt="img6"/></div>
+							<div class="img-wrap">
+							<img src="image/one-wood-panel.jpg" alt="img6"/></div>
 							<h2>open</h2>
 							<button class="content-switch">Read more</button>
 						</div>

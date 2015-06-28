@@ -1,3 +1,5 @@
+
+
 html, body {
   position: relative;
   height: 100%;
@@ -18,4 +20,12 @@ body {
   background-position: center;
 }
 
-p 
+#ball {
+    border-radius: 50%;
+    background-color: red;
+    position:absolute;
+    left:50%;   
+    z-index:2;
+    display:none;
+    border:1px solid #999;
+}
