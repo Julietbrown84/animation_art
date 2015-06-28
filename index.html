@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Draggable Dual-View Slideshow</title>
+		<meta name="description" content="Draggable Dual-View Slideshow: A Slideshow with two views and content area" />
+		<meta name="keywords" content="draggable, slideshow, fullscreen, carousel, views, zoomed, 3d transform, perspective, dragdealer" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link href='http://fonts.googleapis.com/css?family=Playfair+Display:900,400|Lato:300,400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/dragdealer.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/animation.css" />
+  		<script src="js/modernizr.custom.js"></script>
+  		<script src="js/animation.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="codrops-top clearfix">
+				
+			</div>
+
+			<header id="header" class="codrops-header">
+				<h1>Juliet Brown Creative</h1>
+				<button class="slider-switch">Switch view</button>
+			</header>
+
+			<div id="overlay" class="overlay">
+				<div class="info">
+					<h2>Demo interactions</h2>
+					<span class="info-drag">Drag Sliders</span>
+					<span class="info-keys">Use Arrows</span>
+					<span class="info-switch">Switch view</span>
+					<button>Got it!</button>	
+				</div>
+			</div>
+
+			<div id="slideshow" class="dragslider">
+				<section class="img-dragger img-dragger-large dragdealer">
+
+					<div class="handle">
+						<div class="slide" data-content="content-1">
+							<div class="img-wrap"><img src="image/face-drawing.jpg" alt="face-drawing.jpg" /></div>
+							<button class="content-switch">Read more</button>
+						</div>
+
+						<div class="slide" data-content="content-2">
+							<div class="img-wrap"><img src="image/rabbit.jpg" alt="img2"/></div>
+							<h2><span></span></h2>
+							<button class="content-switch">Read more</button>
+						</div>
+
+						<div id="animated" class="slide" data-content="content-3">
+							<div class="img-wrap"><img src="image/falling_art.jpg" alt="img3"/></div>
+							<h2>open</h2>
+							<button class="content-switch">Read more</button>
+						</div>
+
+						<div class="slide" data-content="content-4">
+							<div class="img-wrap"><img src="image/wood-panels.jpg" alt="img4"/></div>
+							<h2>idea</h2>
+							<button class="content-switch">Read more</button>
+						</div>
+
+						<div class="slide" data-content="content-5">
+							<div class="img-wrap"><img src="image/blue_girl.jpg" alt="img5"/></div>
+							<h2>Disrupt<span>Crazy nature and other weather ideas</span></h2>
+							<button class="content-switch">Read more</button>
+						</div>
+
+						<div class="slide" data-content="content-6">
+							<div class="img-wrap"><img src="image/one-wood-panel.jpg" alt="img6"/></div>
+							<h2>Alive</h2>
+							<button class="content-switch">Read more</button>
+						</div>
+
+						<div class="slide" data-content="content-7">
+							<div class="img-wrap"><img src="img/7.jpg" alt="img7"/></div>
+							<h2><span></span></h2>
+							<button class="content-switch">Read more</button>
+						</div>
+
+						<div class="slide" data-content="content-8">
+							<div class="img-wrap"><img src="img/8.jpg" alt="img8"/></div>
+							<h2><span></span></h2>
+							<button class="content-switch">Read more</button>
+						</div>
+					</div>
+				</section>
+				
+				<section class="pages">
+					<div class="content" data-content="content-1">
+						<h2>Juliet</h2><p>"Through analytical problemaic thinking, and curiosity, challenging the status quo allows me to find the nature of truth. Rejecting those<h1>traps</h1>of repetition and pre-set categories takes you beyond the mundane and obvious"</p>
+					</div>
+
+					<div class="content" data-content="content-2">
+						<h2>Juliet</h2><p>When I juxtapose ideas of the past and present with images, language and color, this allows me to<h3>SEE</h3>things which others are blind"</p>
+						</p>
+					</div>
+
+					<div class="content" data-content="content-3">
+						<h2>Juliet</h2>
+						<p>"Every image embodies a way of seeing. If we want to<h4>OPEN</h4> peoples eyes and seek new oppurtunities the relationship between the past and present needs to be explored"</p>
+						
+					</div>
+
+					<div class="content" data-content="content-4">
+						<h2>Juliet</h2><p>"Creativity does'nt possess an abolity to create something out of nothing but the ability to <h7>GeNeRaTe</h7> new Ideas by combinging, changing, or reapplying existing ideas."</p>
+						</p>
+					</div>
+
+					<div class="content" data-content="content-5">
+						<h2>Juliet</h2><h5>"Disruption</h5><p>changes the perceptions we think we all know and see. Creating distinct works that challenge conventional way of thinking creates opportunities"</p>
+						</p>
+					</div>
+
+					<div class="content" data-content="content-6">
+						<h2>Juliet</h2><p>"When you bring an idea <h6>alive</h6>to an audience, you're not just creating a product or advertising. You're creating meaning and meaning is always remembered"</p>
+						</p>
+					</div>
+
+					<div class="content" data-content="content-7">
+						<h2>Juliet</h2><p>When I juxtapose ideas of the past and present with images, language and color, this allows me to SEE things which others are blind"</p>
+						</p>
+					</div>
+
+					<div class="content" data-content="content-8">
+						<h2>Juliet</h2><p>When I juxtapose ideas of the past and present with images, language and color, this allows me to SEE things which others are blind"</p>
+						</p>
+					</div>
+
+				</section>
+			</div>
+		</div>
+
+		<script src="js/dragdealer.js"></script>
+		<script src="js/classie.js"></script>
+		<script src="js/dragslideshow.js"></script>
+		<script>
+			(function() {
+				var overlay = document.getElementById( 'overlay' ),
+					overlayClose = overlay.querySelector( 'button' ),
+					header = document.getElementById( 'header' )
+					switchBtnn = header.querySelector( 'button.slider-switch' ),
+					toggleBtnn = function() {
+						if( slideshow.isFullscreen ) {
+							classie.add( switchBtnn, 'view-maxi' );
+						}
+						else {
+							classie.remove( switchBtnn, 'view-maxi' );
+						}
+					},
+					toggleCtrls = function() {
+						if( !slideshow.isContent ) {
+							classie.add( header, 'hide' );
+						}
+					},
+					toggleCompleteCtrls = function() {
+						if( !slideshow.isContent ) {
+							classie.remove( header, 'hide' );
+						}
+					},
+					slideshow = new DragSlideshow( document.getElementById( 'slideshow' ), { 
+					
+						onToggle : toggleBtnn,		
+						onToggleContent : toggleCtrls,
+						onToggleContentComplete : toggleCompleteCtrls
+					}),
+					toggleSlideshow = function() {
+						slideshow.toggle();
+						toggleBtnn();
+					},
+					closeOverlay = function() {
+						classie.add( overlay, 'hide' );
+					};
+			
+				switchBtnn.addEventListener( 'click', toggleSlideshow );
+				overlayClose.addEventListener( 'click', closeOverlay );
+			}());
+		</script>
+	</body>
+</html>
