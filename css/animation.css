@@ -1,20 +1,20 @@
 @keyframes grow {
 	0% {
-		width: 500px;
-		height: 500px;
+		width: 1000px;
+		height: 1000px;
 	}
 	
 	100% {
-		width: 520px;
-		height: 520px;
+		width: 1020px;
+		height: 1020px;
 	}
 }
 
 #animated {
-	width: 500px;
-	height: 500px;
+	width: 1000px;
+	height: 1000px;
 	background: silver;
-	margin: 1em 0;
+	margin: 2em 0;
 	animation: grow 1s infinite;
 }
 
