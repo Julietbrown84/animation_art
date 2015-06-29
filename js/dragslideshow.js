@@ -1,13 +1,4 @@
-/**
- * dragslideshow.js v1.0.0
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2014, Codrops
- * http://www.codrops.com
- */
+
 ;( function( window ) {
 	
 	'use strict';
@@ -23,10 +14,7 @@
 		transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
 		support = { transitions : Modernizr.csstransitions };
 
-	/**
-	 * gets the viewport width and height
-	 * based on http://responsejs.com/labs/dimensions/
-	 */
+	
 	function getViewport( axis ) {
 		var client, inner;
 		if( axis === 'x' ) {
@@ -41,9 +29,6 @@
 		return client < inner ? inner : client;
 	}
 
-	/**
-	 * extend obj function
-	 */
 	function extend( a, b ) {
 		for( var key in b ) { 
 			if( b.hasOwnProperty( key ) ) {
@@ -53,9 +38,7 @@
 		return a;
 	}
 
-	/**
-	 * DragSlideshow function
-	 */
+	
 	function DragSlideshow( el, options ) {	
 		this.el = el;
 		this.options = extend( {}, this.options );

@@ -50,7 +50,9 @@ html.js,
 
 h1 {
 	color: #006666;
+	font-size: 2cm;
 }
+
 h7 {
 	color: black;
 	font-weight: 500;
@@ -69,9 +71,7 @@ h4 {
    font-family: 'Playfair Display', serif;
    font-size: 2em;
    font-weight: 500;
-
 }
-
 
 h5 {
    color: rgba(40,49,56,0.95);
@@ -81,13 +81,11 @@ h5 {
 
 }
 
-
 h6 {
    color: black;
    font-family: 'Playfair Display', serif;
    font-size: 2em;
    font-weight: 800;
-
 }
 
 .no-js .dragslider h2 {
@@ -103,7 +101,7 @@ h6 {
 	padding-top: 0.2em;
 }
 
-/* Switch button */
+
 button.slider-switch {
 	font-size: 0;
 	width: 80px;
@@ -215,15 +213,6 @@ button.slider-switch:hover {
 	height: 100%;
 	overflow: hidden;
 }
-
-
-/*
-.img-wrap img {
-	position: absolute;
-	display: block;
-	height: calc(100% + 0.2px);
-	opacity: 0.5;
-}*/
 
 @media screen and (min-aspect-ratio: 1280/850) {
     .img-dragger .img-wrap  img {
