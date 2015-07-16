@@ -1,19 +1,10 @@
-/**
- * Dragdealer.js 0.9.7
- * http://github.com/skidding/dragdealer
- *
- * (c) 2010+ Ovidiu Cherecheș
- * http://skidding.mit-license.org
- */
-
- /* Edited by Codrops: 3dtranslate instead of translateX and translateY, removed perspective and backface-visibility hidden*/
 
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
+   
     define(factory);
   } else {
-    // Browser globals
+
     root.Dragdealer = factory();
   }
 }(this, function () {
