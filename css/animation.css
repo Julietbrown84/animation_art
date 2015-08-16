@@ -13,6 +13,8 @@
 #animated {
 	width: 1000px;
 	height: 1000px;
+	display: block;
+	
 	background: silver;
 	margin: 2em 0;
 	animation: grow 1s infinite;
