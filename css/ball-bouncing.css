@@ -1,26 +1,41 @@
+
+html,body {
+  height:100%;
+  overflow: hidden;
+}
+
+.portrait {
+    border-radius: 50% 50% 50% 50%;  
+    width: 450px;
+    height: 450px;
+    margin-left: 35%;
+    margin-top: 10%;
+    position: absolute;
+    background-image: ;
+}
+
 #container {
     margin: 10px;
     width: 100px;
     height: 550px;
-    border-bottom: 1px solid black;
     position: relative;
 }
 
 .ball {
     background: red;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50px;
     position: absolute;
-    left: 25px;
+    left: 85px;
     top: 0;
 }
 
 .bouncing {
-    -webkit-animation: bounce 1.5s infinite;
-    -moz-animation: bounce 1.5s infinite;
-    -o-animation: bounce 1.5s infinite;
-    animation: bounce 1.5s infinite;
+    -webkit-animation: bounce 3.5s infinite;
+    -moz-animation: bounce 3.5s infinite;
+    -o-animation: bounce 3.5s infinite;
+    animation: bounce 3.5s infinite;
 }
 
 @-webkit-keyframes bounce {

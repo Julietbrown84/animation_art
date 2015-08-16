@@ -216,12 +216,7 @@ button.slider-switch:hover {
 	overflow: hidden;
 }
 
-@media screen and (min-aspect-ratio: 1280/850) {
-    .img-dragger .img-wrap  img {
-        width: calc(100% + 0.2px);
-        height: auto;
-    }
-}
+
 
 .js .slide h2 {
 	color: #fff;
