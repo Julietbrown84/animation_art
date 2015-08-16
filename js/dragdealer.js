@@ -1,171 +1,171 @@
 
-// (function (root, factory) {
-//   if (typeof define === 'function' && define.amd) {
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
    
-//     define(factory);
-//   } else {
+    define(factory);
+  } else {
 
-//     root.Dragdealer = factory();
-//   }
-// }(this, function () {
+    root.Dragdealer = factory();
+  }
+}(this, function () {
 
-// var Dragdealer = function(wrapper, options) {
+var Dragdealer = function(wrapper, options) {
  
  
-//   this.bindMethods();
-//   this.options = this.applyDefaults(options || {});
-//   this.wrapper = this.getWrapperElement(wrapper);
-//   if (!this.wrapper) {
-//     return;
-//   }
-//   this.handle = this.getHandleElement(this.wrapper, this.options.handleClass);
-//   if (!this.handle) {
-//     return;
-//   }
-//   this.init();
-//   this.bindEventListeners();
-// };
-// Dragdealer.prototype = {
-//   defaults: {
-//     disabled: false,
-//     horizontal: true,
-//     vertical: false,
-//     slide: true,
-//     steps: 0,
-//     snap: false,
-//     loose: false,
-//     speed: 0.1,
-//     xPrecision: 0,
-//     yPrecision: 0,
-//     handleClass: 'handle',
-//     css3: true,
-//     activeClass: 'active',
-//     tapping: true
-//   },
-//   init: function() {
-//     this.value = {
-//       prev: [-1, -1],
-//       current: [this.options.x || 0, this.options.y || 0],
-//       target: [this.options.x || 0, this.options.y || 0]
-//     };
-//     this.offset = {
-//       wrapper: [0, 0],
-//       mouse: [0, 0],
-//       prev: [-999999, -999999],
-//       current: [0, 0],
-//       target: [0, 0]
-//     };
-//     this.change = [0, 0];
-//     this.stepRatios = this.calculateStepRatios();
+  this.bindMethods();
+  this.options = this.applyDefaults(options || {});
+  this.wrapper = this.getWrapperElement(wrapper);
+  if (!this.wrapper) {
+    return;
+  }
+  this.handle = this.getHandleElement(this.wrapper, this.options.handleClass);
+  if (!this.handle) {
+    return;
+  }
+  this.init();
+  this.bindEventListeners();
+};
+Dragdealer.prototype = {
+  defaults: {
+    disabled: false,
+    horizontal: true,
+    vertical: false,
+    slide: true,
+    steps: 0,
+    snap: false,
+    loose: false,
+    speed: 0.1,
+    xPrecision: 0,
+    yPrecision: 0,
+    handleClass: 'handle',
+    css3: true,
+    activeClass: 'active',
+    tapping: true
+  },
+  init: function() {
+    this.value = {
+      prev: [-1, -1],
+      current: [this.options.x || 0, this.options.y || 0],
+      target: [this.options.x || 0, this.options.y || 0]
+    };
+    this.offset = {
+      wrapper: [0, 0],
+      mouse: [0, 0],
+      prev: [-999999, -999999],
+      current: [0, 0],
+      target: [0, 0]
+    };
+    this.change = [0, 0];
+    this.stepRatios = this.calculateStepRatios();
 
-//     this.activity = false;
-//     this.dragging = false;
-//     this.tapping = false;
+    this.activity = false;
+    this.dragging = false;
+    this.tapping = false;
 
-//     this.reflow();
-//     if (this.options.disabled) {
-//       this.disable();
-//     }
-//   },
-//   applyDefaults: function(options) {
-//     for (var k in this.defaults) {
-//       if (!options.hasOwnProperty(k)) {
-//         options[k] = this.defaults[k];
-//       }
-//     }
-//     return options;
-//   },
-//   getWrapperElement: function(wrapper) {
-//     if (typeof(wrapper) == 'string') {
-//       return document.getElementById(wrapper);
-//     } else {
-//       return wrapper;
-//     }
-//   },
-//   getHandleElement: function(wrapper, handleClass) {
-//     var childElements,
-//         handleClassMatcher,
-//         i;
-//     if (wrapper.getElementsByClassName) {
-//       childElements = wrapper.getElementsByClassName(handleClass);
-//       if (childElements.length > 0) {
-//         return childElements[0];
-//       }
-//     } else {
-//       handleClassMatcher = new RegExp('(^|\\s)' + handleClass + '(\\s|$)');
-//       childElements = wrapper.getElementsByTagName('*');
-//       for (i = 0; i < childElements.length; i++) {
-//         if (handleClassMatcher.test(childElements[i].className)) {
-//           return childElements[i];
-//         }
-//       }
-//     }
-//   },
-//   calculateStepRatios: function() {
-//     var stepRatios = [];
-//     if (this.options.steps > 1) {
-//       for (var i = 0; i <= this.options.steps - 1; i++) {
-//         stepRatios[i] = i / (this.options.steps - 1);
-//       }
-//     }
-//     return stepRatios;
-//   },
-//   setWrapperOffset: function() {
-//     this.offset.wrapper = Position.get(this.wrapper);
-//   },
-//   calculateBounds: function() {
-//     // Apply top/bottom/left and right padding options to wrapper extremities
-//     // when calculating its bounds
-//     var bounds = {
-//       top: this.options.top || 0,
-//       bottom: -(this.options.bottom || 0) + this.wrapper.offsetHeight,
-//       left: this.options.left || 0,
-//       right: -(this.options.right || 0) + this.wrapper.offsetWidth
-//     };
-//     // The available width and height represents the horizontal and vertical
-//     // space the handle has for moving. It is determined by the width and
-//     // height of the wrapper, minus the width and height of the handle
-//     bounds.availWidth = (bounds.right - bounds.left) - this.handle.offsetWidth;
-//     bounds.availHeight = (bounds.bottom - bounds.top) - this.handle.offsetHeight;
-//     return bounds;
-//   },
-//   calculateValuePrecision: function() {
-//     // The sliding transition works by dividing itself until it reaches a min
-//     // value step; because Dragdealer works with [0-1] values, we need this
-//     // "min value step" to represent a pixel when applied to the real handle
-//     // position within the DOM. The xPrecision/yPrecision options can be
-//     // specified to increase the granularity when we're controlling larger
-//     // objects from one of the callbacks
-//     var xPrecision = this.options.xPrecision || Math.abs(this.bounds.availWidth),
-//         yPrecision = this.options.yPrecision || Math.abs(this.bounds.availHeight);
-//     return [
-//       xPrecision ? 1 / xPrecision : 0,
-//       yPrecision ? 1 / yPrecision : 0
-//     ];
-//   },
-//   bindMethods: function() {
-//     this.onHandleMouseDown = bind(this.onHandleMouseDown, this);
-//     this.onHandleTouchStart = bind(this.onHandleTouchStart, this);
-//     this.onDocumentMouseMove = bind(this.onDocumentMouseMove, this);
-//     this.onWrapperTouchMove = bind(this.onWrapperTouchMove, this);
-//     this.onWrapperMouseDown = bind(this.onWrapperMouseDown, this);
-//     this.onWrapperTouchStart = bind(this.onWrapperTouchStart, this);
-//     this.onDocumentMouseUp = bind(this.onDocumentMouseUp, this);
-//     this.onDocumentTouchEnd = bind(this.onDocumentTouchEnd, this);
-//     this.onHandleClick = bind(this.onHandleClick, this);
-//     this.onWindowResize = bind(this.onWindowResize, this);
-//   },
-//   bindEventListeners: function() {
-//     // Start dragging
-//     addEventListener(this.handle, 'mousedown', this.onHandleMouseDown);
-//     addEventListener(this.handle, 'touchstart', this.onHandleTouchStart);
-//     // While dragging
-//     addEventListener(document, 'mousemove', this.onDocumentMouseMove);
-//     addEventListener(this.wrapper, 'touchmove', this.onWrapperTouchMove);
-//     // Start tapping
-//     addEventListener(this.wrapper, 'mousedown', this.onWrapperMouseDown);
-//     addEventListener(this.wrapper, 'touchstart', this.onWrapperTouchStart);
-//     // Stop dragging/tapping
+    this.reflow();
+    if (this.options.disabled) {
+      this.disable();
+    }
+  },
+  applyDefaults: function(options) {
+    for (var k in this.defaults) {
+      if (!options.hasOwnProperty(k)) {
+        options[k] = this.defaults[k];
+      }
+    }
+    return options;
+  },
+  getWrapperElement: function(wrapper) {
+    if (typeof(wrapper) == 'string') {
+      return document.getElementById(wrapper);
+    } else {
+      return wrapper;
+    }
+  },
+  getHandleElement: function(wrapper, handleClass) {
+    var childElements,
+        handleClassMatcher,
+        i;
+    if (wrapper.getElementsByClassName) {
+      childElements = wrapper.getElementsByClassName(handleClass);
+      if (childElements.length > 0) {
+        return childElements[0];
+      }
+    } else {
+      handleClassMatcher = new RegExp('(^|\\s)' + handleClass + '(\\s|$)');
+      childElements = wrapper.getElementsByTagName('*');
+      for (i = 0; i < childElements.length; i++) {
+        if (handleClassMatcher.test(childElements[i].className)) {
+          return childElements[i];
+        }
+      }
+    }
+  },
+  calculateStepRatios: function() {
+    var stepRatios = [];
+    if (this.options.steps > 1) {
+      for (var i = 0; i <= this.options.steps - 1; i++) {
+        stepRatios[i] = i / (this.options.steps - 1);
+      }
+    }
+    return stepRatios;
+  },
+  setWrapperOffset: function() {
+    this.offset.wrapper = Position.get(this.wrapper);
+  },
+  calculateBounds: function() {
+    // Apply top/bottom/left and right padding options to wrapper extremities
+    // when calculating its bounds
+    var bounds = {
+      top: this.options.top || 0,
+      bottom: -(this.options.bottom || 0) + this.wrapper.offsetHeight,
+      left: this.options.left || 0,
+      right: -(this.options.right || 0) + this.wrapper.offsetWidth
+    };
+    // The available width and height represents the horizontal and vertical
+    // space the handle has for moving. It is determined by the width and
+    // height of the wrapper, minus the width and height of the handle
+    bounds.availWidth = (bounds.right - bounds.left) - this.handle.offsetWidth;
+    bounds.availHeight = (bounds.bottom - bounds.top) - this.handle.offsetHeight;
+    return bounds;
+  },
+  calculateValuePrecision: function() {
+    // The sliding transition works by dividing itself until it reaches a min
+    // value step; because Dragdealer works with [0-1] values, we need this
+    // "min value step" to represent a pixel when applied to the real handle
+    // position within the DOM. The xPrecision/yPrecision options can be
+    // specified to increase the granularity when we're controlling larger
+    // objects from one of the callbacks
+    var xPrecision = this.options.xPrecision || Math.abs(this.bounds.availWidth),
+        yPrecision = this.options.yPrecision || Math.abs(this.bounds.availHeight);
+    return [
+      xPrecision ? 1 / xPrecision : 0,
+      yPrecision ? 1 / yPrecision : 0
+    ];
+  },
+  bindMethods: function() {
+    this.onHandleMouseDown = bind(this.onHandleMouseDown, this);
+    this.onHandleTouchStart = bind(this.onHandleTouchStart, this);
+    this.onDocumentMouseMove = bind(this.onDocumentMouseMove, this);
+    this.onWrapperTouchMove = bind(this.onWrapperTouchMove, this);
+    this.onWrapperMouseDown = bind(this.onWrapperMouseDown, this);
+    this.onWrapperTouchStart = bind(this.onWrapperTouchStart, this);
+    this.onDocumentMouseUp = bind(this.onDocumentMouseUp, this);
+    this.onDocumentTouchEnd = bind(this.onDocumentTouchEnd, this);
+    this.onHandleClick = bind(this.onHandleClick, this);
+    this.onWindowResize = bind(this.onWindowResize, this);
+  },
+  bindEventListeners: function() {
+    // Start dragging
+    addEventListener(this.handle, 'mousedown', this.onHandleMouseDown);
+    addEventListener(this.handle, 'touchstart', this.onHandleTouchStart);
+    // While dragging
+    addEventListener(document, 'mousemove', this.onDocumentMouseMove);
+    addEventListener(this.wrapper, 'touchmove', this.onWrapperTouchMove);
+    // Start tapping
+    addEventListener(this.wrapper, 'mousedown', this.onWrapperMouseDown);
+    addEventListener(this.wrapper, 'touchstart', this.onWrapperTouchStart);
+    // Stop dragging/tapping
     addEventListener(document, 'mouseup', this.onDocumentMouseUp);
     addEventListener(document, 'touchend', this.onDocumentTouchEnd);
 
