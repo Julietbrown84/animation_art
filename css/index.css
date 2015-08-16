@@ -1,4 +1,4 @@
-/*
+
 html, body {
   position: relative;
   height: 100%;
@@ -6,16 +6,10 @@ html, body {
 
 body {
  margin: 0; 
-}*/
-
-/*html, body {
-  position: relative;
-  height: 100%;
-}*/
+}
 
 body {
   background-image: url("./../media/rat-chug.gif");
- /* background-size: 120px 120px;*/
   font-family: 'Roboto';
   background-position: center;
 }
