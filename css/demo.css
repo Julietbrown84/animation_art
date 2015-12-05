@@ -192,12 +192,6 @@ a:hover, a:focus {
 .info span.info-keys {
 	background-image: url(../img/keys.svg);
 }
-
-.info span.info-switch {
-	background-image: url(../img/switchmin.svg);
-	background-size: 65%;
-}
-
 .info button {
 	border: 2px solid #fff;
 	background: transparent;
