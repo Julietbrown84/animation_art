@@ -52,6 +52,7 @@ html.js,
 
 h1 {
 	color: #006666;
+	z-index: 999999;
 	font-size: 1cm;
 }
 
