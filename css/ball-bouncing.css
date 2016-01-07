@@ -6,36 +6,29 @@ html,body {
 
 .portrait {
     border-radius: 50% 50% 50% 50%;  
-    width: 450px;
-    height: 450px;
-    margin-left: 35%;
-    margin-top: 0%;
+    width: 520px;
+    height: 520px;
+    margin-left: 60%;
+    margin-top: -23%;
     position: absolute;
     background-image: ;
 }
 
-#container {
-    margin: 10px;
-    width: 100px;
-    height: 550px;
-    position: relative;
-}
-
 .ball {
     background: red;
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
+    width: 45px;
+    height: 45px;
+    border-radius: 60px;
     position: absolute;
-    left: 85px;
+    left: 750px;
     top: 0;
 }
 
 .bouncing {
-    -webkit-animation: bounce 3.5s infinite;
-    -moz-animation: bounce 3.5s infinite;
-    -o-animation: bounce 3.5s infinite;
-    animation: bounce 3.5s infinite;
+    -webkit-animation: bounce 4s infinite;
+    -moz-animation: bounce 4s infinite;
+    -o-animation: bounce 4s infinite;
+    animation: bounce 4s infinite;
 }
 
 @-webkit-keyframes bounce {
@@ -44,7 +37,7 @@ html,body {
         -webkit-animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
     }
     50% {
-        top: 500px;
+        top: 600px;
         -webkit-animation-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
     }
     to {
@@ -58,7 +51,7 @@ html,body {
         -moz-animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
     }
     50% {
-        top: 500px;
+        top: 650px;
         -moz-animation-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
     }
     to {
@@ -72,7 +65,7 @@ html,body {
         -o-animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
     }
     50% {
-        top: 500px;
+        top: 650px;
         -o-animation-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
     }
     to {
@@ -86,7 +79,7 @@ html,body {
         animation-timing-function: cubic-bezier(0.33, 0, 0.66, 0.33);
     }
     50% {
-        top: 500px;
+        top: 650px;
         animation-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
     }
     to {
