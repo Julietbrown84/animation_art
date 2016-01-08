@@ -5,14 +5,14 @@
 	}
 	
 	100% {
-		width: 1020px;
-		height: 1020px;
+		width: 2020px;
+		height: 2020px;
 	}
 }
 
 #animated {
-	width: 1000px;
-	height: 1000px;
+	width: 2000px;
+	height: 2000px;
 	display: block;
 	
 	background: silver;
@@ -24,4 +24,8 @@
 	animation-name: none;	
 }
 
+
+.animate {
+	margin-left: -1500px;
+}
 
