@@ -36,13 +36,21 @@ p {
 	margin-left: 0px;
 }
 
+.horse {
+	margin-top: -7600px;
+	margin-left: 800px;
+}
+
 .rabbit {
 	margin-left: 1000px;
 	margin-bottom: -300px;
 }
 .blue-girl {
-	margin-top: -320px;
+	margin-top: -8600px;
+}
 
+.purple-painting {
+	margin-top: -8600px;
 }
 
 .alive-text {
@@ -52,7 +60,7 @@ p {
 	background-color: #fefefe;
 	display: table;
 	padding: 40px;
-	margin: 100px 80px 0px 2000px;
+	margin: 100px 80px 0px 2200px;
 }
 
 .idea-text {
@@ -66,12 +74,41 @@ p {
 }
 
 .disruption-text {
-	width: 1000px;
-	height: 70px;
+	width: 600px;
+	height: 1070px;
 	border: solid 1px #CCCCCC;
 	background-color: #fefefe;
 	display: table;
 	padding: 40px;
-	margin: 0px 100px 0px 900px;
+	margin: 0px 100px 0px 1200px;
+}
 
+.open-text {
+	width: 400px;
+	height: 600px;
+	border: solid 1px #CCCCCC;
+	background-color: #fefefe;
+	display: table;
+	padding: 40px;
+	margin: -10px 100px 0px 1070px;
+}
+
+.purple-painting-text {
+	width: 400px;
+	height: 600px;
+	border: solid 1px #CCCCCC;
+	background-color: #fefefe;
+	display: table;
+	padding: 40px;
+	margin: -10px 100px 0px 1070px;
+}
+
+.horse-text {
+	width: 400px;
+	height: 600px;
+	border: solid 1px #CCCCCC;
+	background-color: #fefefe;
+	display: table;
+	padding: 40px;
+	margin: 60px 100px 0px 50px;
 }
