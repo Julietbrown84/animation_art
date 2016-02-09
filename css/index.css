@@ -7,12 +7,32 @@ html, body {
 body {
  margin: 0; 
 }
-
-p {
-
-	font-size: 100px;
-}
+/*
 
 .large-wood {
-	margin-left: -350px;
+	margin-left: 0px;
 }
+
+.horse {
+	margin-top: -7600px;
+	margin-left: 800px;
+}
+
+.rabbit {
+	margin-left: 1000px;
+	margin-bottom: -300px;
+}
+.blue-girl {
+	margin-top: -8600px;
+}
+*/
+.purple-painting {
+	margin-left: 700px;
+}
+
+
+/*
+p { 
+	font-size: 20px;
+	color: #292421;
+}*/

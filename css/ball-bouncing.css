@@ -6,10 +6,10 @@ html,body {
 
 .portrait {
     border-radius: 50% 50% 50% 50%;  
-    width: 520px;
-    height: 520px;
-    margin-left: 60%;
-    margin-top: -23%;
+    width: 550px;
+    height: 550px;
+    margin-left: 56%;
+    margin-top: -18%;
     position: absolute;
     background-image: ;
 }
